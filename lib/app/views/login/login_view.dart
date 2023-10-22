@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pongs/app/views/criar_conta/criar_conta.dart';
-import '../../widgets/buttom_large_custom/buttom_large_custom_widget.dart';
-import '../../widgets/input_custom/input_custom_widget.dart';
-import '../../widgets/logo/logo_marca_widget.dart';
+import 'package:pongs/app/widgets/buttom_large_custom/buttom_large_custom_widget.dart';
+import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
+import 'package:pongs/app/widgets/logo/logo_marca_widget.dart';
+
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
