@@ -1,13 +1,16 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LogoMarca extends StatelessWidget {
-  const LogoMarca({super.key});
+  final double espacamentoPaddingTop;
+  const LogoMarca({super.key, this.espacamentoPaddingTop = 56.0});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 56.0),
+      padding: EdgeInsets.only(bottom: espacamentoPaddingTop),
       child: SizedBox(
         width: 167,
         height: 231,
