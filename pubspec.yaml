@@ -92,7 +92,7 @@ flutter:
     
     - family: IconsPongs
       fonts:
-        - asset: assets/fonts/IconsPongs.ttf
+        - asset: assets/icons/IconsPongs.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
