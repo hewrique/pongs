@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pongs/app/views/login/login_view.dart';
 import 'package:pongs/app/widgets/buttom_large_custom/buttom_large_custom_widget.dart';
 import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
 import 'package:pongs/app/widgets/logo/logo_marca_widget.dart';
@@ -27,7 +28,7 @@ class _CriarContaViewState extends State<CriarContaView> {
                 SizedBox(
                   child: Column(children: const [
                     LogoMarca(
-                      espacamentoPaddingTop: 49.0,
+                      espacamentoPaddingTop: 35.0,
                     ),
                     InputCustom(inputTitle: "Digite seu nome"),
                     InputCustom(inputTitle: "Digite seu usuário"),
@@ -36,25 +37,36 @@ class _CriarContaViewState extends State<CriarContaView> {
                     ButtonLargeCustom(buttonName: "Cadastrar")
                   ]),
                 ),
-                const Text.rich(TextSpan(children: [
-                  TextSpan(
-                      text: "Já tem conta? ",
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            const LoginView(),
+                      ),
+                    );
+                  },
+                  child: const Text.rich(TextSpan(children: [
+                    TextSpan(
+                        text: "Já tem conta? ",
+                        style: TextStyle(
+                            fontFamily: "Poppins",
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600)),
+                    TextSpan(
+                      text: "Faça Login",
                       style: TextStyle(
-                          fontFamily: "Poppins",
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600)),
-                  TextSpan(
-                    text: "Faça Login",
-                    style: TextStyle(
-                      fontFamily: "Poppins",
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      decoration: TextDecoration.underline,
-                    ),
-                  )
-                ])),
+                        fontFamily: "Poppins",
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        decoration: TextDecoration.underline,
+                      ),
+                    )
+                  ])),
+                ),
               ],
             ),
           )),

@@ -36,7 +36,7 @@ class _LoginViewState extends State<LoginView> {
                         password: true,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 20.0, top: 5.0),
+                        padding: const EdgeInsets.only(right: 35.0, top: 5.0),
                         child: Container(
                           alignment: Alignment.centerRight,
                           child: const Text(
