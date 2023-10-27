@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pongs/app/views/criar_conta/criar_conta.dart';
+import 'package:pongs/app/views/esqueceu_senha/esqueceu_senha.dart';
 import 'package:pongs/app/widgets/buttom_large_custom/buttom_large_custom_widget.dart';
 import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
 import 'package:pongs/app/widgets/logo/logo_marca_widget.dart';
-
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -39,14 +39,25 @@ class _LoginViewState extends State<LoginView> {
                         padding: const EdgeInsets.only(right: 35.0, top: 5.0),
                         child: Container(
                           alignment: Alignment.centerRight,
-                          child: const Text(
-                            "Esqueceu sua senha?",
-                            style: TextStyle(
-                                fontFamily: "Poppins",
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black,
-                                fontSize: 11,
-                                decoration: TextDecoration.underline),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      const EsqueceuSenha(),
+                                ),
+                              );
+                            },
+                            child: const Text(
+                              "Esqueceu sua senha?",
+                              style: TextStyle(
+                                  fontFamily: "Poppins",
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black,
+                                  fontSize: 11,
+                                  decoration: TextDecoration.underline),
+                            ),
                           ),
                         ),
                       ),
