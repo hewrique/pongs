@@ -6,14 +6,14 @@ import 'package:pongs/app/widgets/buttom_large_custom/buttom_large_custom_widget
 import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
 import 'package:pongs/app/widgets/logo/logo_marca_widget.dart';
 
-class EsqueceuSenha extends StatefulWidget {
-  const EsqueceuSenha({super.key});
+class RecoveryCodeView extends StatefulWidget {
+  const RecoveryCodeView({super.key});
 
   @override
-  State<EsqueceuSenha> createState() => _EsqueceuSenhaState();
+  State<RecoveryCodeView> createState() => _RecoveryCodeViewState();
 }
 
-class _EsqueceuSenhaState extends State<EsqueceuSenha> {
+class _RecoveryCodeViewState extends State<RecoveryCodeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

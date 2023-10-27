@@ -4,14 +4,14 @@ import 'package:pongs/app/widgets/buttom_large_custom/buttom_large_custom_widget
 import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
 import 'package:pongs/app/widgets/logo/logo_marca_widget.dart';
 
-class CriarContaView extends StatefulWidget {
-  const CriarContaView({super.key});
+class CreateAccountView extends StatefulWidget {
+  const CreateAccountView({super.key});
 
   @override
-  State<CriarContaView> createState() => _CriarContaViewState();
+  State<CreateAccountView> createState() => _CreateAccountViewState();
 }
 
-class _CriarContaViewState extends State<CriarContaView> {
+class _CreateAccountViewState extends State<CreateAccountView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

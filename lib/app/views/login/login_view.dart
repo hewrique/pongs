@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pongs/app/views/criar_conta/criar_conta.dart';
-import 'package:pongs/app/views/esqueceu_senha/esqueceu_senha.dart';
+import 'package:pongs/app/views/create_accont/create_account.dart';
+import 'package:pongs/app/views/recovery_code/recovery_code.dart';
 import 'package:pongs/app/widgets/buttom_large_custom/buttom_large_custom_widget.dart';
 import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
 import 'package:pongs/app/widgets/logo/logo_marca_widget.dart';
@@ -45,7 +45,7 @@ class _LoginViewState extends State<LoginView> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      const EsqueceuSenha(),
+                                      const RecoveryCodeView(),
                                 ),
                               );
                             },
@@ -70,7 +70,7 @@ class _LoginViewState extends State<LoginView> {
                             context,
                             MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  const CriarContaView(),
+                                  const CreateAccountView(),
                             ),
                           );
                         },
