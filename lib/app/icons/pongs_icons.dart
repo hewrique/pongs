@@ -30,6 +30,7 @@ class IconsPongs {
   static const IconData clock = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData close = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData decrement = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData dice_multiple = IconData(0xe813, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData edit = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData gamepad = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData heart = IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
