@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pongs/app/services/navigator_service/navigator_custom_service.dart';
 import 'package:pongs/app/views/login/login_view.dart';
 import 'package:pongs/app/widgets/buttom_large_custom/buttom_large_custom_widget.dart';
 import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
@@ -12,6 +13,8 @@ class CreateAccountView extends StatefulWidget {
 }
 
 class _CreateAccountViewState extends State<CreateAccountView> {
+  final NavigatorCustomService _navigatorCustomService =
+      NavigatorCustomService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,25 +31,22 @@ class _CreateAccountViewState extends State<CreateAccountView> {
               child: Column(
                 children: [
                   SizedBox(
-                    child: Column(children: const [
-                      LogoMarca(
+                    child: Column(children:  [
+                      const LogoMarca(
                         espacamentoPaddingTop: 35.0,
                       ),
-                      InputCustomWidget(inputTitle: "Digite seu nome"),
-                      InputCustomWidget(inputTitle: "Digite seu usuário"),
-                      InputCustomWidget(inputTitle: "Digite seu email"),
-                      InputCustomWidget(inputTitle: "Digite sua senha"),
-                      ButtonLargeCustomWidget(buttonName: "Cadastrar")
+                      const InputCustomWidget(inputTitle: "Digite seu nome"),
+                      const InputCustomWidget(inputTitle: "Digite seu usuário"),
+                      const InputCustomWidget(inputTitle: "Digite seu email"),
+                      const InputCustomWidget(inputTitle: "Digite sua senha"),
+                      ButtonLargeCustomWidget(buttonName: "Cadastrar", onPressed: () => _navigatorCustomService.push(pageName: const LoginView()
+                      , context: context),)
                     ]),
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => const LoginView(),
-                        ),
-                      );
+                      _navigatorCustomService.push(
+                          pageName: const LoginView(), context: context);
                     },
                     child: const Text.rich(TextSpan(children: [
                       TextSpan(
