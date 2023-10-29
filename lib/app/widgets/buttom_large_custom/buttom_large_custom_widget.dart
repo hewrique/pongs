@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ButtonLargeCustom extends StatefulWidget {
+class ButtonLargeCustomWidget extends StatefulWidget {
   final String buttonName;
-  const ButtonLargeCustom({super.key, required this.buttonName});
+  final VoidCallback? onPressed;
+  const ButtonLargeCustomWidget({super.key, required this.buttonName, this.onPressed});
 
   @override
-  State<ButtonLargeCustom> createState() => _ButtonLargeCustomState();
+  State<ButtonLargeCustomWidget> createState() => _ButtonLargeCustomWidgetState();
 }
 
-class _ButtonLargeCustomState extends State<ButtonLargeCustom> {
+class _ButtonLargeCustomWidgetState extends State<ButtonLargeCustomWidget> {
   dynamic _widthButton;
 
   @override
@@ -25,7 +26,7 @@ class _ButtonLargeCustomState extends State<ButtonLargeCustom> {
         width: _widthButton,
         height: 50,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: widget.onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFF611313),
             shape: const RoundedRectangleBorder(

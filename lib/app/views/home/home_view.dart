@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pongs/app/icons/pongs_icons.dart';
+import 'package:pongs/app/widgets/app_bar_custom/app_bar_custom_widget.dart';
+import 'package:pongs/app/widgets/bottom_navigation_bar_custom/bottom_navigation_bar_custom_widget.dart';
+import 'package:pongs/app/widgets/floating_action_button_custom/floating_action_button_custom_widget.dart';
+import 'package:pongs/app/widgets/safe_area_custom/safe_area_custom_widget.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -8,8 +13,45 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  int currentIndex = 0;
+
+// TODO: Remover os ícones quando for criado as páginas.
+  List<Widget> pages = const [
+    Icon(IconsPongs.home_variant, size: 60, color: Color(0xFF611313)),
+    Icon(IconsPongs.search,  size: 60, color: Color(0xFF611313)),
+    Icon(IconsPongs.heart,  size: 60, color: Color(0xFF611313)),
+    Icon(IconsPongs.account_circle,  size: 60, color: Color(0xFF611313)),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: const AppBarCustomWidget(
+        preferredSize: Size.fromHeight(65.0),
+        child: SafeAreaCustomWidget(),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButtonWidget(
+        onPressed: () {},
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            pages[currentIndex],
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBarCustom(
+        onTap: (int newIndex) {
+          setState(
+            () {
+              currentIndex = newIndex;
+            },
+          );
+        },
+      ),
+    );
   }
 }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class InputCustom extends StatelessWidget {
+class InputCustomWidget extends StatelessWidget {
   final String? inputTitle;
   final bool password;
   final double customWidth;
   final double paddingTop;
-  const InputCustom(
+  const InputCustomWidget(
       {super.key,
       this.inputTitle,
       this.password = false,

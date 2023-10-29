@@ -30,12 +30,13 @@ class _LoginViewState extends State<LoginView> {
                   child: Column(
                     children: [
                       const LogoMarca(),
-                      const InputCustom(inputTitle: "E-mail"),
-                      const InputCustom(
+                      const InputCustomWidget(inputTitle: "E-mail"),
+                      const InputCustomWidget(
                         inputTitle: "Senha",
                         password: true,
                       ),
                       Padding(
+                        padding: const EdgeInsets.only(right: 35.0, top: 5.0),
                         padding: const EdgeInsets.only(right: 35.0, top: 5.0),
                         child: Container(
                           alignment: Alignment.centerRight,
@@ -63,6 +64,14 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       const ButtonLargeCustom(
                         buttonName: "Entrar",
+                        onPressed: () {
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      const HomeView()),
+                              (route) => false);
+                        },
                       ),
                       GestureDetector(
                         onTap: () {
