@@ -32,11 +32,11 @@ class _CreateAccountViewState extends State<CreateAccountView> {
                       LogoMarca(
                         espacamentoPaddingTop: 35.0,
                       ),
-                      InputCustom(inputTitle: "Digite seu nome"),
-                      InputCustom(inputTitle: "Digite seu usuário"),
-                      InputCustom(inputTitle: "Digite seu email"),
-                      InputCustom(inputTitle: "Digite sua senha"),
-                      ButtonLargeCustom(buttonName: "Cadastrar")
+                      InputCustomWidget(inputTitle: "Digite seu nome"),
+                      InputCustomWidget(inputTitle: "Digite seu usuário"),
+                      InputCustomWidget(inputTitle: "Digite seu email"),
+                      InputCustomWidget(inputTitle: "Digite sua senha"),
+                      ButtonLargeCustomWidget(buttonName: "Cadastrar")
                     ]),
                   ),
                   GestureDetector(

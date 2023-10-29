@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:pongs/app/views/login/login_view.dart';
 import 'package:pongs/app/widgets/buttom_large_custom/buttom_large_custom_widget.dart';
 import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
@@ -45,25 +43,25 @@ class _RecoveryCodeViewState extends State<RecoveryCodeView> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
-                  InputCustom(
+                  InputCustomWidget(
                     customWidth: 75.5,
                     paddingTop: 2.0,
                   ),
-                  InputCustom(
+                  InputCustomWidget(
                     customWidth: 75.5,
                     paddingTop: 2.0,
                   ),
-                  InputCustom(
+                  InputCustomWidget(
                     customWidth: 75.5,
                     paddingTop: 2.0,
                   ),
-                  InputCustom(
+                  InputCustomWidget(
                     customWidth: 75.5,
                     paddingTop: 2.0,
                   ),
                 ],
               ),
-              const ButtonLargeCustom(buttonName: "Enviar"),
+              const ButtonLargeCustomWidget(buttonName: "Enviar"),
               GestureDetector(
                 onTap: () {
                   Navigator.push(

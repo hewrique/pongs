@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pongs/app/views/create_accont/create_account.dart';
+import 'package:pongs/app/views/home/home_view.dart';
 import 'package:pongs/app/views/recovery_code/recovery_code.dart';
 import 'package:pongs/app/widgets/buttom_large_custom/buttom_large_custom_widget.dart';
 import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
@@ -37,7 +38,6 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 35.0, top: 5.0),
-                        padding: const EdgeInsets.only(right: 35.0, top: 5.0),
                         child: Container(
                           alignment: Alignment.centerRight,
                           child: GestureDetector(
@@ -62,7 +62,7 @@ class _LoginViewState extends State<LoginView> {
                           ),
                         ),
                       ),
-                      const ButtonLargeCustom(
+                      ButtonLargeCustomWidget(
                         buttonName: "Entrar",
                         onPressed: () {
                           Navigator.pushAndRemoveUntil(

@@ -40,9 +40,9 @@ class _SplashScreenViewState extends State<SplashScreenView> {
         decoration: const BoxDecoration(
           color: Color(0xFFFFB74E),
         ),
-        child: const Column(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             LogoMarca(espacamentoPaddingTop: 10),
             LoadingAnimationWidgetCustom(
               leftDotColor: Color(0xFFFFC928),

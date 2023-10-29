@@ -6,16 +6,16 @@ class SafeAreaCustomWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return  SafeArea(
       child: Padding(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           left: 29.0,
           right: 29.0,
           top: 15.0,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Icon(
               IconsPongs.filter,
               size: 30,
