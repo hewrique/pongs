@@ -16,7 +16,6 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int currentIndex = 0;
 
-  
   List<Widget> pages = const [
     Icon(IconsPongs.home_variant, size: 60, color: Color(0xFF611313)),
     Icon(IconsPongs.search, size: 60, color: Color(0xFF611313)),
@@ -35,17 +34,23 @@ class _HomeViewState extends State<HomeView> {
       floatingActionButton: FloatingActionButtonWidget(
         onPressed: () {},
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: const [
-              CardHomeWidget(),
-              CardHomeWidget(),
-              CardHomeWidget()
-            ],
-          ),
-        ),
-      ),
+      body: // Center(
+          //   child: SingleChildScrollView(
+          //     child: Column(
+          //       children: const [
+          //         CardHomeWidget(),
+          //         CardHomeWidget(),
+          //         CardHomeWidget()
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          ListView.builder(
+              itemCount: 3,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return CardHomeWidget();
+              }),
       bottomNavigationBar: BottomNavigationBarCustom(
         onTap: (int newIndex) {
           setState(
