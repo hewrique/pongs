@@ -40,6 +40,7 @@ flutter:
   assets:
     - assets/img/logo/
     - assets/img/game_icons/
+    - assets/img/search_magnify/
 
  
   # To add custom fonts to your application, add a fonts section here,

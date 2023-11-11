@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pongs/app/widgets/search_input/search_input_widget.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});
@@ -10,6 +11,8 @@ class SearchView extends StatefulWidget {
 class _SearchViewState extends State<SearchView> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: SearchInputWidget(),
+    );
   }
 }

@@ -26,8 +26,8 @@ class CardGameDescriptionWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 28),
-        const Row(
-          children: [
+        Row(
+          children: const [
             Icon(
               IconsPongs.users_multiple,
               size: 19,
@@ -46,8 +46,8 @@ class CardGameDescriptionWidget extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 22),
-        const Row(
-          children: [
+         Row(
+          children: const [
             Icon(
               IconsPongs.clock,
               size: 24,
@@ -66,8 +66,8 @@ class CardGameDescriptionWidget extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 22),
-        const Row(
-          children: [
+         Row(
+          children: const [
             Icon(
               IconsPongs.choop,
               size: 24,
