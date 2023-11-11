@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pongs/app/services/navigator_service/navigator_custom_service.dart';
 import 'package:pongs/app/views/create_accont/create_account.dart';
-import 'package:pongs/app/views/home/home_view.dart';
+import 'package:pongs/app/views/dashboard/dashboard_view.dart';
 import 'package:pongs/app/views/recovery_code/recovery_code.dart';
 import 'package:pongs/app/widgets/buttom_large_custom/buttom_large_custom_widget.dart';
 import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
@@ -41,15 +42,9 @@ class _LoginViewState extends State<LoginView> {
                         child: Container(
                           alignment: Alignment.centerRight,
                           child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      const RecoveryCodeView(),
-                                ),
-                              );
-                            },
+                            onTap: () => NavigatorCustomService.push(
+                                pageName: const RecoveryCodeView(),
+                                context: context),
                             child: const Text(
                               "Esqueceu sua senha?",
                               style: TextStyle(
@@ -64,25 +59,16 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       ButtonLargeCustomWidget(
                         buttonName: "Entrar",
-                        onPressed: () {
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      const HomeView()),
-                              (route) => false);
-                        },
+                        onPressed: () =>
+                            NavigatorCustomService.pushAndRemoveUntil(
+                          pageName: const DashboardView(),
+                          context: context,
+                        ),
                       ),
                       GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  const CreateAccountView(),
-                            ),
-                          );
-                        },
+                        onTap: () => NavigatorCustomService.push(
+                            pageName: const CreateAccountView(),
+                            context: context),
                         child: const Text.rich(
                           TextSpan(
                             children: [

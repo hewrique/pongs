@@ -17,12 +17,11 @@ class SplashScreenView extends StatefulWidget {
 }
 
 class _SplashScreenViewState extends State<SplashScreenView> {
-  final NavigatorCustomService _navigatorCustom = NavigatorCustomService();
-
+ 
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
-      _navigatorCustom.push(
+      NavigatorCustomService.push(
         pageName: const LoginView(),
         context: context,
       );
@@ -40,9 +39,9 @@ class _SplashScreenViewState extends State<SplashScreenView> {
         decoration: const BoxDecoration(
           color: Color(0xFFFFB74E),
         ),
-        child:  Column(
+        child:  const Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             LogoMarca(espacamentoPaddingTop: 10),
             LoadingAnimationWidgetCustom(
               leftDotColor: Color(0xFFFFC928),

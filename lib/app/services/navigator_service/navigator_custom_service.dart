@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class NavigatorCustomService {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-  Future<dynamic> push({required Widget pageName, required BuildContext context}) {
-    return Navigator.push(
+ static Future<void> push(
+      {required Widget pageName, required BuildContext context}) async{
+    await Navigator.push(
       context,
       MaterialPageRoute(
         builder: (BuildContext context) => pageName,
@@ -12,9 +13,9 @@ class NavigatorCustomService {
     );
   }
 
-  Future<dynamic> pushAndRemoveUntil({required Widget pageName}) {
-    return Navigator.pushAndRemoveUntil(
-        navigatorKey.currentState!.context,
+  static Future<void> pushAndRemoveUntil({required Widget pageName, required BuildContext context}) async{
+    await Navigator.pushAndRemoveUntil(
+       context,
         MaterialPageRoute(
           builder: (BuildContext context) => pageName,
         ),

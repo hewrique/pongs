@@ -13,8 +13,6 @@ class CreateAccountView extends StatefulWidget {
 }
 
 class _CreateAccountViewState extends State<CreateAccountView> {
-  final NavigatorCustomService _navigatorCustomService =
-      NavigatorCustomService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +29,7 @@ class _CreateAccountViewState extends State<CreateAccountView> {
               child: Column(
                 children: [
                   SizedBox(
-                    child: Column(children:  [
+                    child: Column(children: [
                       const LogoMarca(
                         espacamentoPaddingTop: 35.0,
                       ),
@@ -39,13 +37,16 @@ class _CreateAccountViewState extends State<CreateAccountView> {
                       const InputCustomWidget(inputTitle: "Digite seu usuário"),
                       const InputCustomWidget(inputTitle: "Digite seu email"),
                       const InputCustomWidget(inputTitle: "Digite sua senha"),
-                      ButtonLargeCustomWidget(buttonName: "Cadastrar", onPressed: () => _navigatorCustomService.push(pageName: const LoginView()
-                      , context: context),)
+                      ButtonLargeCustomWidget(
+                        buttonName: "Cadastrar",
+                        onPressed: () => NavigatorCustomService.push(
+                            pageName: const LoginView(), context: context),
+                      )
                     ]),
                   ),
                   GestureDetector(
                     onTap: () {
-                      _navigatorCustomService.push(
+                      NavigatorCustomService.push(
                           pageName: const LoginView(), context: context);
                     },
                     child: const Text.rich(TextSpan(children: [
