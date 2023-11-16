@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pongs/app/icons/pongs_icons.dart';
+import 'package:pongs/app/utils/popup/popup_utils.dart';
+import 'package:pongs/app/widgets/filter/filter.dart';
 
 class SafeAreaCustomWidget extends StatelessWidget {
   const SafeAreaCustomWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(
           left: 29.0,
@@ -15,13 +17,18 @@ class SafeAreaCustomWidget extends StatelessWidget {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Icon(
-              IconsPongs.filter,
-              size: 30,
-              color: Color(0xFF611313),
+          children: [
+            GestureDetector(
+              onTap: () {
+                Utils.showPopup(const FilterWidget(), context);
+              },
+              child: const Icon(
+                IconsPongs.filter,
+                size: 30,
+                color: Color(0xFF611313),
+              ),
             ),
-            Text(
+            const Text(
               'Pongs!',
               style: TextStyle(
                 fontFamily: "Lobster",
@@ -30,7 +37,7 @@ class SafeAreaCustomWidget extends StatelessWidget {
                 color: Color(0xFF611313),
               ),
             ),
-            Icon(
+            const Icon(
               IconsPongs.dice_multiple,
               size: 35,
               color: Color(0xFF611313),

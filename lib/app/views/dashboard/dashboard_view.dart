@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pongs/app/icons/pongs_icons.dart';
-import 'package:pongs/app/services/navigator_service/navigator_custom_service.dart';
 import 'package:pongs/app/views/favorites/favorites_view.dart';
 import 'package:pongs/app/views/home/home_view.dart';
 import 'package:pongs/app/views/profile/profile_view.dart';
