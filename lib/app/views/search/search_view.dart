@@ -16,7 +16,6 @@ class SearchView extends StatefulWidget {
 
 class _SearchViewState extends State<SearchView> {
   final SearchInputController _searchInputController = SearchInputController();
-  final Debouncer _debouncer = Debouncer(milliseconds: 300);
   List<GameModel> listSearchInputAllGames = [];
 
   @override
@@ -40,12 +39,9 @@ class _SearchViewState extends State<SearchView> {
                     autofocus: false,
                     maxLines: 1,
                     onChanged: (value) {
-                      // _debouncer.run(() {
                         _searchInputController.filterGames(value);
 
                         setState(() {});
-                      //   print("Handling input: $value");
-                      // });
                     },
                     style: const TextStyle(
                         fontFamily: "Poppins", color: Color(0xFF611313)),
