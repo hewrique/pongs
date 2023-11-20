@@ -1,13 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pongs/app/models/user_model/user_model.dart';
-import 'package:pongs/app/repositories/repository/repository.dart';
+import 'package:pongs/app/repositories/home_repository/home_repository.dart';
 import 'package:pongs/app/services/navigator_service/navigator_custom_service.dart';
 import 'package:pongs/app/services/user_auth/firebase_auth_service/firebase_auth_service.dart';
 import 'package:pongs/app/views/login/login_view.dart';
 
 class CreateAccountController {
   final FirebaseAuthService _auth = FirebaseAuthService();
-  final Repository _repository = Repository();
+  final HomeRepository _repository = HomeRepository();
 
   void signUp({
     required String name,

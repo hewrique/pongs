@@ -6,22 +6,9 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:pongs/app/models/game_model/game_model.dart';
 import 'package:pongs/app/services/url_constants/url_constants.dart';
 
-class Repository {
+class HomeRepository {
   late DatabaseReference _firebaseDatabaseRef;
   late StreamSubscription<DatabaseEvent> _messagesSubscription;
-
-  Map map = {
-    'gameId': 'wwwww',
-    'gameTitle': 'jogo teste 2',
-    'thumbnail': "xxxxxxxxx",
-    'coverPhoto': 'zzzzzzzzzzzz',
-    'materials': 'blábláblá',
-    'description': 'Ovo Ovo Ovo Ovo Ovo Ovo Ovo Ovo Ovo Ovo ',
-    'amountOfPeople': '2 pessoas',
-    'timePerRound': '3 horas',
-    'howToPlay':
-        jsonEncode(["lista 1", "lista 2", "lista 3", "lista 4", "lista 5"]),
-  };
 
   Future setUser({required String userUid, required Map userModel}) async {
     var urlPath = '${PrivateStringUrl.users}$userUid/dados do usuario/';
@@ -29,35 +16,6 @@ class Repository {
     _firebaseDatabaseRef = FirebaseDatabase.instance.ref().child(urlPath);
 
     await _firebaseDatabaseRef.push().set(userModel);
-  }
-
-  Future<bool> setGamerUser() async {
-    var userUid = 'rSj7E2RRg8cJ4HM6ZDldiKgU2qJ3';
-    var urlPath =
-        '${PrivateStringUrl.users}$userUid${NomeDaPastaPrivada.usuarioLogado}${NomeDaPastaPrivada.jogosPostadosPeloUsuario}';
-    bool result = false;
-
-    _firebaseDatabaseRef = FirebaseDatabase.instance.ref().child(urlPath);
-
-    await _firebaseDatabaseRef.push().set(map).whenComplete(() {
-      result = true;
-    });
-
-    return result;
-  }
-
-  Future setGamerAll() async {
-    String urlPath = PublicStringUrl.todosOsJogos;
-
-    bool result = false;
-
-    _firebaseDatabaseRef = FirebaseDatabase.instance.ref().child(urlPath);
-
-    await _firebaseDatabaseRef.push().set(map).whenComplete(() {
-      result = true;
-    });
-
-    return result;
   }
 
   Future<List<GameModel>> getAllGames() async {

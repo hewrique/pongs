@@ -606,6 +606,7 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                                   paddingTop: 0,
                                                   customWidth: 240,
                                                   customHeight: 123,
+                                                  customMaxLines: 4,
                                                   customBorderRadius: 15,
                                                   customBackgroundColor:
                                                       const Color(0xFFFEDCA9),
@@ -665,6 +666,7 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                                   customWidth: 216,
                                                   customHeight: 76,
                                                   customBorderRadius: 15,
+                                                   customMaxLines: 4,
                                                   customBackgroundColor:
                                                       const Color(0xFFFEDCA9),
                                                   controller: _cubit
@@ -707,6 +709,7 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                                       paddingTop: 0,
                                                       customWidth: 216,
                                                       customHeight: 76,
+                                                      customMaxLines: 4,
                                                       customBorderRadius: 15,
                                                       customBackgroundColor:
                                                           const Color(
@@ -754,6 +757,7 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                                       paddingTop: 0,
                                                       customWidth: 216,
                                                       customHeight: 76,
+                                                      customMaxLines: 4,
                                                       customBorderRadius: 15,
                                                       customBackgroundColor:
                                                           const Color(
@@ -801,6 +805,7 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                                       paddingTop: 0,
                                                       customWidth: 216,
                                                       customHeight: 76,
+                                                      customMaxLines: 4,
                                                       customBorderRadius: 15,
                                                       customBackgroundColor:
                                                           const Color(
@@ -848,6 +853,7 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                                       paddingTop: 0,
                                                       customWidth: 216,
                                                       customHeight: 76,
+                                                      customMaxLines: 4,
                                                       customBorderRadius: 15,
                                                       customBackgroundColor:
                                                           const Color(
@@ -895,6 +901,7 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                                       paddingTop: 0,
                                                       customWidth: 216,
                                                       customHeight: 76,
+                                                      customMaxLines: 4,
                                                       customBorderRadius: 15,
                                                       customBackgroundColor:
                                                           const Color(
@@ -941,6 +948,7 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                                       paddingTop: 0,
                                                       customWidth: 216,
                                                       customHeight: 76,
+                                                      customMaxLines: 4,
                                                       customBorderRadius: 15,
                                                       customBackgroundColor:
                                                           const Color(
@@ -987,6 +995,7 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                                       paddingTop: 0,
                                                       customWidth: 216,
                                                       customHeight: 76,
+                                                      customMaxLines: 4,
                                                       customBorderRadius: 15,
                                                       customBackgroundColor:
                                                           const Color(

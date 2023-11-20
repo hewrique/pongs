@@ -3,13 +3,16 @@ import 'dart:io';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:pongs/app/services/url_constants/url_constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AddNewGameRepository {
   late DatabaseReference _firebaseDatabaseRef;
 
   Future<bool> setGamerUser(Map<String, dynamic> map) async {
-    var userUid = 'rSj7E2RRg8cJ4HM6ZDldiKgU2qJ3';
-    var urlPath =
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+    
+    final userUid = prefs.getString('loginUserId');
+    final urlPath =
         '${PrivateStringUrl.users}$userUid${NomeDaPastaPrivada.usuarioLogado}${NomeDaPastaPrivada.jogosPostadosPeloUsuario}';
     bool result = false;
 
@@ -43,11 +46,9 @@ class AddNewGameRepository {
     String downloadURL = '';
 
     try {
-      // Referência para o caminho onde a imagem será armazenada no Firebase Storage
       Reference storageReference =
           FirebaseStorage.instance.ref().child('Pongs images/Thumbnail games').child('$fileName.jpg');
 
-      // Upload da imagem para o Firebase Storage
       await storageReference.putFile(file);
 
       print('Imagem enviada com sucesso!');
@@ -67,11 +68,9 @@ class AddNewGameRepository {
     String downloadURL = '';
 
     try {
-      // Referência para o caminho onde a imagem será armazenada no Firebase Storage
       Reference storageReference =
           FirebaseStorage.instance.ref().child('Pongs images/Cover photo games').child('$fileName.jpg');
 
-      // Upload da imagem para o Firebase Storage
       await storageReference.putFile(file);
 
       print('Imagem enviada com sucesso!');

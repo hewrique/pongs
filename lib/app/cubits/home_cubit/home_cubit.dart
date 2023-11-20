@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:pongs/app/cubits/home_cubit/home_state.dart';
 import 'package:pongs/app/models/game_model/game_model.dart';
-import 'package:pongs/app/repositories/repository/repository.dart';
+import 'package:pongs/app/repositories/home_repository/home_repository.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  final Repository _repository;
+  final HomeRepository _repository;
 
   List<GameModel> listGame = [];
 
@@ -19,13 +19,4 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
-// Não está sendo usado possivelmente apagar
-  Future<void> sendGame() async {
-    bool sendGameuser = await _repository.setGamerUser();
-    bool sendGameAll = await _repository.setGamerAll();
-
-    if (sendGameuser && sendGameAll) {
-      receiveAllGames();
-    }
-  }
 }

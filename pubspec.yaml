@@ -29,6 +29,7 @@ dependencies:
   google_fonts: ^4.0.3
   image_picker: ^1.0.4
   permission_handler: ^11.0.1
+  shared_preferences: ^2.2.2
   uuid: ^4.2.1
   
 

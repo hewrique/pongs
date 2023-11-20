@@ -75,12 +75,6 @@ class InputCustomWidget extends StatelessWidget {
                 autofocus: false,
                 maxLines: customMaxLines,
                 obscureText: obscureText,
-                inputFormatters: onlyTwoDigits
-                    ? [
-                        LengthLimitingTextInputFormatter(2),
-                        FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
-                      ]
-                    : [],
                 style: const TextStyle(
                   fontFamily: "Poppins",
                   color: Color(0xFF611313),

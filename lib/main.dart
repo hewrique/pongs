@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:pongs/app/cubits/add_new_game_cubit/add_new_game_cubit.dart';
 import 'package:pongs/app/cubits/home_cubit/home_cubit.dart';
 import 'package:pongs/app/repositories/add_new_game_repository/add_new_game_repository.dart';
-import 'package:pongs/app/repositories/repository/repository.dart';
+import 'package:pongs/app/repositories/home_repository/home_repository.dart';
 import 'package:pongs/app/views/splash_screen/splash_screen_view.dart';
 import 'package:pongs/app/services/service_locator/service_locator.dart';
 import 'package:provider/provider.dart';
@@ -24,8 +24,7 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
-        // Other providers can be added here 
-        Provider<HomeCubit>(create: (_) => HomeCubit(Repository())),
+        Provider<HomeCubit>(create: (_) => HomeCubit(HomeRepository())),
         Provider<AddNewGameCubit>(create: (_) => AddNewGameCubit(AddNewGameRepository())),
       ],
       child: MaterialApp(
