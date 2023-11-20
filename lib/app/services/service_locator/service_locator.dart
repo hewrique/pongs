@@ -24,10 +24,3 @@ void setupDependencyInjection() {
 }
 
 
-// Criar um widget separado para input pequeno
-// madar Daniel criar a conta no firebase
-// validar input login para aceitar caracteres de login
-// salvar userUid no local storage
-// enviar fotos do jogo para o locar storage do firebase OK
-// Salvar jogo nos favoritos
-
