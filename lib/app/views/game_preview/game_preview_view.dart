@@ -5,7 +5,28 @@ import 'package:pongs/app/widgets/card_game_rules/card_game_rules_widget.dart';
 import 'package:pongs/app/widgets/loading_animation/loading_animation_widget.dart';
 
 class GamePreviewView extends StatefulWidget {
-  const GamePreviewView({super.key});
+  final String gameId;
+  final String thumbnail;
+  final String coverPhoto;
+  final String gameTitle;
+  final String materials;
+  final String description;
+  final int amountOfPeople;
+  final int timePerRound;
+  final List<String> howToPlay;
+
+  const GamePreviewView({
+    super.key,
+    required this.gameId,
+    required this.thumbnail,
+    required this.coverPhoto,
+    required this.gameTitle,
+    required this.materials,
+    required this.description,
+    required this.amountOfPeople,
+    required this.timePerRound,
+    required this.howToPlay,
+  });
 
   @override
   State<GamePreviewView> createState() => _GamePreviewViewState();
@@ -30,24 +51,19 @@ class _GamePreviewViewState extends State<GamePreviewView> {
             color: const Color(0xFFFFB74E),
             width: double.maxFinite,
             height: heightCustom,
-            child: 
-                const LoadingAnimationWidgetCustom(
-                  leftDotColor: Color(0xFFFFC928),
-                  rightDotColor: Color(0xFFFFC928),
-                  leftBorderDotColor: Color(0xFF000000),
-                  rightBorderDotColor: Color(0xFF000000),
-                  borderWidth: 3,
-                  borderStyle: BorderStyle.solid,
-                  size: 40,
-              
+            child: const LoadingAnimationWidgetCustom(
+              leftDotColor: Color(0xFFFFC928),
+              rightDotColor: Color(0xFFFFC928),
+              leftBorderDotColor: Color(0xFF000000),
+              rightBorderDotColor: Color(0xFF000000),
+              borderWidth: 3,
+              borderStyle: BorderStyle.solid,
+              size: 40,
             ),
           ),
           SizedBox(
             height: heightCustom,
-            child: Image.network(
-              'https://s3-alpha-sig.figma.com/img/2a1e/4965/9db67974408ddc03c820f10bff48478b?Expires=1700438400&Signature=IYaA89PgK1z7NFQLAOp2GgiemN6A1oCbXqEBROt-r531OOf~ANzJgGWwY2zsJvNVQrPXNfL-LFyQiwwDoxCbLIp3vbMKVGdS44BL9sO6-o55pDNGDQeuaEcTbr8Sl8y84QI0xXgCnmU1VVcOBGd~HnIOqQSt0LZFvitaWVSKR4SOQnvKgoMPZOgSzMxNWysuH~KRn~RgGCz3NBUmfnWllOLxL360JaycPfeZlWj6ZlfQldDi9ngil1kS5iKTQS6dHgJNmmdtyPuebcSsp1f0ZA1htbR-vv5vpqT7PLyyKKq7h1O0hwcc9SlW5JvXtxYoCDLfyq1bHB6RrXwcSpAcOw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
-              fit: BoxFit.cover,
-            ),
+            child: Image.network(widget.coverPhoto, fit: BoxFit.cover),
           ),
           DraggableScrollableSheet(
             initialChildSize: 0.7,
@@ -67,10 +83,17 @@ class _GamePreviewViewState extends State<GamePreviewView> {
                   children: [
                     Column(
                       children: [
-                        const ButtonsGamePreviewWidget(),
-                        const CardGameDescriptionWidget(),
+                        const ButtonsTopGamePreviewWidget(),
+                        CardGameDescriptionWidget(
+                          thumbnail: widget.thumbnail,
+                          gameTitle: widget.gameTitle,
+                          materials: widget.materials,
+                          description: widget.description,
+                          amountOfPeople: widget.amountOfPeople,
+                          timePerRound: widget.timePerRound,
+                        ),
                         CardGameRulesWidget(
-                          listGames: listGames,
+                          howToPlay: widget.howToPlay,
                         )
                       ],
                     ),
@@ -83,13 +106,4 @@ class _GamePreviewViewState extends State<GamePreviewView> {
       ),
     );
   }
-
-  List<String> listGames = [
-    "Todos os jogadores se reúnem na cozinha, prontos para a ação.",
-    "O jogador da vez lança o dado. O número que aparecer determina quantos itens ´guloseima´ os outros jogadores terão que preparar para ele.",
-    "Os itens ´guloseima´ podem variar e devem ser decididos previamente pelo grupo. Por exemplo, vocês podem escolher criar pequenas combinações de alimentos inusitados, como um pedaço de pão com ketchup e uma gota de mostarda.",
-    "Se o jogador escolher comer, todos os outros jogadores devem tomar uma bebida como consequência.",
-    "Se o jogador optar por não comer, então ele mesmo deve tomar uma bebida como punição.",
-    "O jogo prossegue dessa forma, com os jogadores rolando o dado e enfrentando os desafios engraçados criados pelos números.",
-  ];
 }

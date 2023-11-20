@@ -1,17 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class InputCustomWidget extends StatelessWidget {
   final String? inputTitle;
-  final bool password;
+  final bool obscureText;
+  final bool onlyTwoDigits;
+  final TextEditingController? controller;
+  final VoidCallback? onClick;
+  final Function(String?)? onChanged;
+  final FocusNode? focusNode;
+  final int customMaxLines;
   final double customWidth;
+  final double customHeight;
+  final double customBorderRadius;
+  final Color customBackgroundColor;
   final double paddingTop;
-  const InputCustomWidget(
-      {super.key,
-      this.inputTitle,
-      this.password = false,
-      this.customWidth = 350.0,
-      this.paddingTop = 16.0});
+  const InputCustomWidget({
+    super.key,
+    this.inputTitle,
+    this.obscureText = false,
+    this.onlyTwoDigits = false,
+    this.controller,
+    this.onClick,
+    this.onChanged,
+    this.focusNode,
+    this.customMaxLines = 1,
+    this.customWidth = 350.0,
+    this.customHeight = 50,
+    this.customBorderRadius = 20,
+    this.paddingTop = 16.0,
+    this.customBackgroundColor = const Color(0xFFFFCE86),
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -39,19 +59,32 @@ class InputCustomWidget extends StatelessWidget {
           padding: const EdgeInsets.only(top: 5.0),
           child: Container(
             width: customWidth,
-            height: 50,
+            height: customHeight,
             decoration: ShapeDecoration(
-                color: const Color(0xFFFFCE86),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20))),
+              color: customBackgroundColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(customBorderRadius),
+              ),
+            ),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(20.0, 12.0, 20.0, 12.0),
+              padding: const EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
               child: TextFormField(
+                controller: controller,
+                onChanged: onChanged,
+                focusNode: focusNode,
                 autofocus: false,
-                maxLines: 1,
-                obscureText: password,
+                maxLines: customMaxLines,
+                obscureText: obscureText,
+                inputFormatters: onlyTwoDigits
+                    ? [
+                        LengthLimitingTextInputFormatter(2),
+                        FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                      ]
+                    : [],
                 style: const TextStyle(
-                    fontFamily: "Poppins", color: Color(0xFF611313)),
+                  fontFamily: "Poppins",
+                  color: Color(0xFF611313),
+                ),
                 decoration: const InputDecoration(border: InputBorder.none),
               ),
             ),

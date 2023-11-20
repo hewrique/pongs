@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 
 class CardHomeWidget extends StatelessWidget {
+  final String thumbnail;
+  final String gameTitle;
+  final String description;
   final VoidCallback onClick;
 
-  const CardHomeWidget({super.key, required this.onClick});
+  const CardHomeWidget({
+    Key? key,
+    required this.thumbnail,
+    required this.gameTitle,
+    required this.description,
+    required this.onClick,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +42,7 @@ class CardHomeWidget extends StatelessWidget {
                         child: SizedBox(
                           width: 70,
                           height: 70,
-                          child:
-                              Image.asset('assets/img/game_icons/BeerPong.png'),
+                          child: Image.network(thumbnail),
                         ),
                       ),
                       GestureDetector(
@@ -48,22 +56,22 @@ class CardHomeWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 10.0, left: 16),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0, left: 16),
                   child: Text(
-                    'Beer Pong',
-                    style: TextStyle(
+                    gameTitle,
+                    style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w600,
                         color: Color(0xFF161616),
                         fontFamily: 'Poppins'),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 10.0, left: 16, bottom: 18),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0, left: 16, bottom: 18),
                   child: Text(
-                    'Para jogar Beer Pong, coloque uma mesa nivelada, organize copos em formação triangular na borda e encha-os com cerveja até um terço cheios.',
-                    style: TextStyle(
+                    description,
+                    style: const TextStyle(
                         fontSize: 12,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w600),

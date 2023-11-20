@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pongs/app/controllers/login_controller/login_controller.dart';
 import 'package:pongs/app/services/navigator_service/navigator_custom_service.dart';
-import 'package:pongs/app/views/create_accont/create_account.dart';
-import 'package:pongs/app/views/dashboard/dashboard_view.dart';
+import 'package:pongs/app/views/create_accont/create_account_view.dart';
 import 'package:pongs/app/views/recovery_code/recovery_code.dart';
 import 'package:pongs/app/widgets/buttom_large_custom/buttom_large_custom_widget.dart';
 import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
@@ -15,6 +15,14 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  final LoginController loginController = LoginController();
+
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,10 +40,20 @@ class _LoginViewState extends State<LoginView> {
                   child: Column(
                     children: [
                       const LogoMarca(),
-                      const InputCustomWidget(inputTitle: "E-mail"),
-                      const InputCustomWidget(
+                      InputCustomWidget(
+                        inputTitle: "E-mail",
+                        controller: _emailController,
+                        onChanged: (value) {
+                          email = value ?? '';
+                        },
+                      ),
+                      InputCustomWidget(
                         inputTitle: "Senha",
-                        password: true,
+                        obscureText: true,
+                        controller: _passwordController,
+                        onChanged: (value) {
+                          password = value ?? '';
+                        },
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 35.0, top: 5.0),
@@ -43,8 +61,8 @@ class _LoginViewState extends State<LoginView> {
                           alignment: Alignment.centerRight,
                           child: GestureDetector(
                             onTap: () => NavigatorCustomService.push(
-                                pageName: const RecoveryCodeView(),
-                                context: context),
+                              pageName: const RecoveryCodeView(),
+                            ),
                             child: const Text(
                               "Esqueceu sua senha?",
                               style: TextStyle(
@@ -59,16 +77,17 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       ButtonLargeCustomWidget(
                         buttonName: "Entrar",
-                        onPressed: () =>
-                            NavigatorCustomService.pushAndRemoveUntil(
-                          pageName: const DashboardView(),
-                          context: context,
-                        ),
+                        onPressed: () {
+                          loginController.signIn(
+                            email: email,
+                            password: password,
+                          );
+                        },
                       ),
                       GestureDetector(
                         onTap: () => NavigatorCustomService.push(
-                            pageName: const CreateAccountView(),
-                            context: context),
+                          pageName: const CreateAccountView(),
+                        ),
                         child: const Text.rich(
                           TextSpan(
                             children: [

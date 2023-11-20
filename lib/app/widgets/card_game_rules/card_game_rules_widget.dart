@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CardGameRulesWidget extends StatelessWidget {
-  final List<String> listGames;
+  final List<String> howToPlay;
   const CardGameRulesWidget({
     Key? key,
-    required this.listGames,
+    required this.howToPlay,
   }) : super(key: key);
 
   @override
@@ -25,7 +25,7 @@ class CardGameRulesWidget extends StatelessWidget {
         ListView.builder(
           shrinkWrap: true,
           physics: const ClampingScrollPhysics(),
-          itemCount: listGames.length,
+          itemCount: howToPlay.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(bottom: 10.0),
@@ -42,7 +42,7 @@ class CardGameRulesWidget extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      listGames[index],
+                      howToPlay[index],
                       style: const TextStyle(
                         fontSize: 12,
                         fontFamily: 'Poppins',

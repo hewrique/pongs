@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "382737932235",
+    "project_id": "pongs-e52b6",
+    "storage_bucket": "pongs-e52b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382737932235:android:df141e1733e2670775e04e",
+        "android_client_info": {
+          "package_name": "com.example.pongs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcCjjgfkufKcxXDVEwPTsfxlxa6smP8g0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:pongs/app/icons/pongs_icons.dart';
+import 'package:pongs/app/icons/icons_pongs.dart';
 
 class SafeAreaCustomWidget extends StatelessWidget {
   const SafeAreaCustomWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return  const SafeArea(
       child: Padding(
-        padding: const EdgeInsets.only(
+        padding: EdgeInsets.only(
           left: 29.0,
           right: 29.0,
           top: 15.0,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             Icon(
               IconsPongs.filter,
               size: 30,

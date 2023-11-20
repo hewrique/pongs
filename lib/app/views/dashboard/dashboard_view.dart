@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pongs/app/icons/pongs_icons.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pongs/app/controllers/home_controller/home_controller.dart';
+import 'package:pongs/app/cubits/home_cubit/home_cubit.dart';
 import 'package:pongs/app/services/navigator_service/navigator_custom_service.dart';
+import 'package:pongs/app/services/navigator_service/navigator_services.dart';
 import 'package:pongs/app/views/favorites/favorites_view.dart';
 import 'package:pongs/app/views/home/home_view.dart';
+import 'package:pongs/app/views/add_new_game/add_new_game_view.dart';
 import 'package:pongs/app/views/profile/profile_view.dart';
 import 'package:pongs/app/views/search/search_view.dart';
 import 'package:pongs/app/widgets/app_bar_custom/app_bar_custom_widget.dart';
@@ -18,6 +22,8 @@ class DashboardView extends StatefulWidget {
 }
 
 class _DashboardViewState extends State<DashboardView> {
+  late final HomeCubit _cubit;
+
   int currentIndex = 0;
 
   List<Widget> pages = const [
@@ -28,8 +34,15 @@ class _DashboardViewState extends State<DashboardView> {
   ];
 
   @override
+  void initState() {
+    _cubit = context.read<HomeCubit>();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: const AppBarCustomWidget(
         preferredSize: Size.fromHeight(65.0),
         child: SafeAreaCustomWidget(),
@@ -37,7 +50,9 @@ class _DashboardViewState extends State<DashboardView> {
       backgroundColor: const Color(0xFFFFF2DF),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButtonWidget(
-        onPressed: () {},
+        onPressed: () {
+          _showAlert(context);
+        },
       ),
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBarCustom(
@@ -49,6 +64,13 @@ class _DashboardViewState extends State<DashboardView> {
           );
         },
       ),
+    );
+  }
+
+  void _showAlert(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => const AddNewGameView()
     );
   }
 }

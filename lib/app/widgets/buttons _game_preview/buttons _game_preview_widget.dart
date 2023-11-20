@@ -1,9 +1,9 @@
  
 import 'package:flutter/material.dart';
-import 'package:pongs/app/icons/pongs_icons.dart';
+import 'package:pongs/app/icons/icons_pongs.dart';
 
-class ButtonsGamePreviewWidget extends StatelessWidget {
-  const ButtonsGamePreviewWidget({super.key});
+class ButtonsTopGamePreviewWidget extends StatelessWidget {
+  const ButtonsTopGamePreviewWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
