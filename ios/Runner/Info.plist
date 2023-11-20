@@ -6,6 +6,10 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>Pongs</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Precisamos de camera para realizar as fotos da avaliação</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Precisamos de acesso a sua biblioteca de fotos, para as fotos ao cadastrar um novo jogo</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

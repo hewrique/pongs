@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pongs/app/controllers/search_input_controller/search_input_controller.dart';
 import 'package:pongs/app/models/game_model/game_model.dart';
 import 'package:pongs/app/services/navigator_service/navigator_custom_service.dart';
-import 'package:pongs/app/utils/debouncer_utils/debouncer_utils.dart';
 import 'package:pongs/app/utils/list_all_games_global/list_all_games_global.dart';
 import 'package:pongs/app/views/game_preview/game_preview_view.dart';
 import 'package:pongs/app/widgets/card_home/card_home_widget.dart';
