@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pongs/app/icons/pongs_icons.dart';
+import 'package:pongs/app/icons/icons_pongs.dart';
 import 'package:pongs/app/widgets/input_custom/input_custom_widget.dart';
 
 class FilterWidget extends StatelessWidget {
