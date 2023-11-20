@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:pongs/app/models/game_model/game_model.dart';
 import 'package:pongs/app/services/url_constants/url_constants.dart';
+import 'package:pongs/app/utils/list_all_games_global/list_all_games_global.dart';
 
 class HomeRepository {
   late DatabaseReference _firebaseDatabaseRef;
@@ -48,6 +49,7 @@ class HomeRepository {
           );
 
           listGamesModel.add(gameModel);
+          ListAllGamesGlobal.listAllGamesGlobal.add(gameModel);
         });
 
         // Complete the Future when data is loaded

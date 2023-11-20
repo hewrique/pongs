@@ -47,30 +47,33 @@ class _HomeViewState extends State<HomeView> {
                 }
 
                 if (state is HomeSucess) {
-                  return ListView.builder(
-                    itemCount: state.listGame.length,
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      final item = state.listGame[index];
-                      return CardHomeWidget(
-                        thumbnail: item.thumbnail,
-                        gameTitle: item.gameTitle,
-                        description: item.description,
-                        onClick: () => NavigatorCustomService.push(
-                          pageName: GamePreviewView(
-                            gameId: item.gameId,
-                            thumbnail: item.thumbnail,
-                            coverPhoto: item.coverPhoto,
-                            gameTitle: item.gameTitle,
-                            materials: item.materials,
-                            description: item.description,
-                             amountOfPeople: item.amountOfPeople,
-                             timePerRound: item.timePerRound,
-                            howToPlay: item.howToPlay.toList(),
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: ListView.builder(
+                      itemCount: state.listGame.length,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        final item = state.listGame[index];
+                        return CardHomeWidget(
+                          thumbnail: item.thumbnail,
+                          gameTitle: item.gameTitle,
+                          description: item.description,
+                          onClick: () => NavigatorCustomService.push(
+                            pageName: GamePreviewView(
+                              gameId: item.gameId,
+                              thumbnail: item.thumbnail,
+                              coverPhoto: item.coverPhoto,
+                              gameTitle: item.gameTitle,
+                              materials: item.materials,
+                              description: item.description,
+                               amountOfPeople: item.amountOfPeople,
+                               timePerRound: item.timePerRound,
+                              howToPlay: item.howToPlay.toList(),
+                            ),
                           ),
-                        ),
-                      );
-                    },
+                        );
+                      },
+                    ),
                   );
                 } else {
                   return const SizedBox.shrink();
