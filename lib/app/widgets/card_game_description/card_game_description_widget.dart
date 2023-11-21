@@ -4,7 +4,7 @@ import 'package:pongs/app/icons/icons_pongs.dart';
 class CardGameDescriptionWidget extends StatelessWidget {
   final String thumbnail;
   final String gameTitle;
-  final String materials;
+  final List<String> materials;
   final String description;
   final int amountOfPeople;
   final int timePerRound;
@@ -91,7 +91,7 @@ class CardGameDescriptionWidget extends StatelessWidget {
             const SizedBox(width: 15),
             Expanded(
               child: Text(
-                materials,
+                materials.toString().replaceAll(RegExp(r'[\[\]]'), ""),
                 style: const TextStyle(
                   color: Color(0xFF611313),
                   fontSize: 12,

@@ -40,7 +40,7 @@ class HomeRepository {
             gameTitle: value['gameTitle'],
             thumbnail: value['thumbnail'],
             coverPhoto: value['coverPhoto'],
-            materials: value['materials'],
+            materials: List<String>.from((jsonDecode(value['materials']) as List)), 
             description: value['description'],
             amountOfPeople: value['amountOfPeople'],
             timePerRound: value['timePerRound'],

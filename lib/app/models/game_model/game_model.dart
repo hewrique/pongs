@@ -5,7 +5,7 @@ class GameModel {
   final String gameTitle;
   final String thumbnail;
   final String coverPhoto;
-  final String materials;
+  final List<String> materials;
   final String description;
   final int amountOfPeople;
   final int timePerRound;
@@ -32,7 +32,7 @@ class GameModel {
       'gameTitle': gameTitle,
       'thumbnail': thumbnail,
       'coverPhoto': coverPhoto,
-      'materials': materials,
+      'materials': jsonEncode(materials) ,
       'description': description,
       'amountOfPeople': amountOfPeople,
       'timePerRound': timePerRound,

@@ -507,9 +507,9 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                                     customBackgroundColor:
                                                         const Color(0xFFFEDCA9),
                                                     controller: _cubit
-                                                        .twoMaterialsController,
+                                                        .threeMaterialsController,
                                                     focusNode:
-                                                        _cubit.twoMaterialsNode,
+                                                        _cubit.threeMaterialsNode,
                                                   ),
                                                   const SizedBox(
                                                     width: 16,
@@ -566,9 +566,9 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                                     customBackgroundColor:
                                                         const Color(0xFFFEDCA9),
                                                     controller: _cubit
-                                                        .twoMaterialsController,
+                                                        .fourMaterialsController,
                                                     focusNode:
-                                                        _cubit.twoMaterialsNode,
+                                                        _cubit.fourMaterialsNode,
                                                   ),
                                                   const SizedBox(
                                                     width: 16,

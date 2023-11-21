@@ -9,7 +9,7 @@ class GamePreviewView extends StatefulWidget {
   final String thumbnail;
   final String coverPhoto;
   final String gameTitle;
-  final String materials;
+  final List<String> materials;
   final String description;
   final int amountOfPeople;
   final int timePerRound;

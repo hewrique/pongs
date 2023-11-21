@@ -15,6 +15,7 @@ class AddNewGameCubit extends Cubit<AddNewGameState> {
   String filePathThumbnail = '';
   String filePathcoverPhoto = '';
   List<String> listHowToPlay = [];
+  List<String> listMaterials = [];
 
   final titleOfGameController = TextEditingController();
   final amountOfPeopleController = TextEditingController();
@@ -214,8 +215,27 @@ class AddNewGameCubit extends Cubit<AddNewGameState> {
     }
   }
 
+  addListOfMaterials() {
+    if (oneMaterialsController.text.isNotEmpty) {
+      listMaterials.add(oneMaterialsController.text);
+    }
+
+    if (twoMaterialsController.text.isNotEmpty) {
+      listMaterials.add(twoMaterialsController.text);
+    }
+
+    if (threeMaterialsController.text.isNotEmpty) {
+      listMaterials.add(threeMaterialsController.text);
+    }
+
+    if (fourMaterialsController.text.isNotEmpty) {
+      listMaterials.add(fourMaterialsController.text);
+    }
+  }
+
   Future<void> sendGame() async {
-     addListOfHowToPlay();
+    addListOfHowToPlay();
+    addListOfMaterials();
 
     bool sendGameuser = await _repository.setGamerUser(
       GameModel(
@@ -223,10 +243,14 @@ class AddNewGameCubit extends Cubit<AddNewGameState> {
         gameTitle: titleOfGameController.text,
         thumbnail: filePathThumbnail,
         coverPhoto: filePathcoverPhoto,
-        materials: oneMaterialsController.text,
+        materials: listMaterials,
         description: descriptionController.text,
-        amountOfPeople: amountOfPeopleController.text.isNotEmpty ? int.parse(amountOfPeopleController.text) : 0,
-        timePerRound: timePerRoundController.text.isNotEmpty ? int.parse(timePerRoundController.text) : 0,
+        amountOfPeople: amountOfPeopleController.text.isNotEmpty
+            ? int.parse(amountOfPeopleController.text)
+            : 0,
+        timePerRound: timePerRoundController.text.isNotEmpty
+            ? int.parse(timePerRoundController.text)
+            : 0,
         howToPlay: listHowToPlay,
       ).toMap(),
     );
@@ -237,10 +261,14 @@ class AddNewGameCubit extends Cubit<AddNewGameState> {
         gameTitle: titleOfGameController.text,
         thumbnail: filePathThumbnail,
         coverPhoto: filePathcoverPhoto,
-        materials: oneMaterialsController.text,
+        materials: listMaterials,
         description: descriptionController.text,
-         amountOfPeople: amountOfPeopleController.text.isNotEmpty ? int.parse(amountOfPeopleController.text) : 0,
-        timePerRound: timePerRoundController.text.isNotEmpty ? int.parse(timePerRoundController.text) : 0,
+        amountOfPeople: amountOfPeopleController.text.isNotEmpty
+            ? int.parse(amountOfPeopleController.text)
+            : 0,
+        timePerRound: timePerRoundController.text.isNotEmpty
+            ? int.parse(timePerRoundController.text)
+            : 0,
         howToPlay: listHowToPlay,
       ).toMap(),
     );
@@ -332,11 +360,16 @@ class AddNewGameCubit extends Cubit<AddNewGameState> {
         filePathThumbnail = '';
         filePathcoverPhoto = '';
         listHowToPlay = [];
+        listMaterials = [];
 
         titleOfGameController.clear();
         amountOfPeopleController.clear();
         timePerRoundController.clear();
+
         oneMaterialsController.clear();
+        twoMaterialsController.clear();
+        threeMaterialsController.clear();
+        fourMaterialsController.clear();
         descriptionController.clear();
 
         oneHowToPlayController.clear();
