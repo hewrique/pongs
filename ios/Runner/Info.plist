@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Pongs</string>
+	<string>Pongs!</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Precisamos de camera para realizar as fotos da avaliação</string>
 	<key>NSPhotoLibraryUsageDescription</key>
