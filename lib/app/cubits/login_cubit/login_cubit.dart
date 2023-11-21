@@ -1,25 +1,33 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:pongs/app/services/navigator_service/navigator_custom_service.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pongs/app/cubits/login_cubit/login_state.dart';
 import 'package:pongs/app/services/user_auth/firebase_auth_service/firebase_auth_service.dart';
-import 'package:pongs/app/views/dashboard/dashboard_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LoginController {
+class LoginCubit extends Cubit<LoginState> {
   final FirebaseAuthService _auth = FirebaseAuthService();
+
+  LoginCubit() : super(LoginInitial());
 
   void signIn({required String email, required String password}) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     User? user = await _auth.signInWithEmailAndPassword(email, password);
 
-    if (user != null) {
+    if (email.isEmpty || password.isEmpty) {
+      emit(LoginError(
+        title: 'Erro!',
+        message: 'Para entrar digite seu e-mail e senha',
+      ));
+    } else if (user != null) {
       prefs.setString('loginUserId', user.uid);
 
-      NavigatorCustomService.pushAndRemoveUntil(
-        pageName: const DashboardView(),
-      );
+      emit(LoginSucess());
     } else {
-      print('Erro ao fazer Login');
+      emit(LoginError(
+        title: 'Erro!',
+        message: 'Login ou senha incorreto',
+      ));
     }
   }
 }

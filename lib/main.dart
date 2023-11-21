@@ -2,7 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pongs/app/cubits/add_new_game_cubit/add_new_game_cubit.dart';
+import 'package:pongs/app/cubits/create_account_cubit/create_account_cubit.dart';
 import 'package:pongs/app/cubits/home_cubit/home_cubit.dart';
+import 'package:pongs/app/cubits/login_cubit/login_cubit.dart';
 import 'package:pongs/app/repositories/add_new_game_repository/add_new_game_repository.dart';
 import 'package:pongs/app/repositories/home_repository/home_repository.dart';
 import 'package:pongs/app/views/splash_screen/splash_screen_view.dart';
@@ -24,6 +26,8 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
+        Provider<CreateAccountCubit>(create: (_) => CreateAccountCubit()),
+         Provider<LoginCubit>(create: (_) => LoginCubit()),
         Provider<HomeCubit>(create: (_) => HomeCubit(HomeRepository())),
         Provider<AddNewGameCubit>(create: (_) => AddNewGameCubit(AddNewGameRepository())),
       ],
