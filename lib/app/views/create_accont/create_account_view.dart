@@ -129,6 +129,7 @@ class _CreateAccountViewState extends State<CreateAccountView> {
                           InputCustomWidget(
                             inputTitle: "Digite sua senha",
                             controller: _passwordController,
+                            obscureText: false,
                             onChanged: (value) {
                               password = value ?? '';
                             },
