@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pongs/app/controllers/search_input_controller/search_input_controller.dart';
 import 'package:pongs/app/models/game_model/game_model.dart';
 import 'package:pongs/app/services/navigator_service/navigator_custom_service.dart';
@@ -38,12 +39,14 @@ class _SearchViewState extends State<SearchView> {
                     autofocus: false,
                     maxLines: 1,
                     onChanged: (value) {
-                        _searchInputController.filterGames(value);
+                      _searchInputController.filterGames(value);
 
-                        setState(() {});
+                      setState(() {});
                     },
-                    style: const TextStyle(
-                        fontFamily: "Poppins", color: Color(0xFF611313)),
+                    style: GoogleFonts.getFont(
+                      'Poppins',
+                      color: Color(0xFF611313),
+                    ),
                     decoration: const InputDecoration(
                         border: InputBorder.none,
                         prefixIcon: Icon(Icons.search),

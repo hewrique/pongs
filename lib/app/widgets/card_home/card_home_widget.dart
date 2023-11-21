@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardHomeWidget extends StatelessWidget {
   final String thumbnail;
@@ -60,21 +61,24 @@ class CardHomeWidget extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 10.0, left: 16),
                   child: Text(
                     gameTitle,
-                    style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF161616),
-                        fontFamily: 'Poppins'),
+                    style: GoogleFonts.getFont(
+                      'Poppins',
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF161616),
+                    ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10.0, left: 16, bottom: 18),
+                  padding:
+                      const EdgeInsets.only(top: 10.0, left: 16, bottom: 18),
                   child: Text(
                     description,
-                    style: const TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w600),
+                    style: GoogleFonts.getFont(
+                      'Poppins',
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 )
               ],

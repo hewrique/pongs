@@ -75,8 +75,8 @@ class InputCustomWidget extends StatelessWidget {
                 autofocus: false,
                 maxLines: customMaxLines,
                 obscureText: obscureText,
-                style: const TextStyle(
-                  fontFamily: "Poppins",
+                style: GoogleFonts.getFont(
+                  "Poppins",
                   color: Color(0xFF611313),
                 ),
                 decoration: const InputDecoration(border: InputBorder.none),

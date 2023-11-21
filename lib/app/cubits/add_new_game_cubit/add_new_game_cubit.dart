@@ -8,6 +8,7 @@ import 'package:pongs/app/models/game_model/game_model.dart';
 import 'package:pongs/app/repositories/add_new_game_repository/add_new_game_repository.dart';
 import 'package:pongs/app/services/navigator_service/navigator_custom_service.dart';
 import 'package:pongs/app/views/dashboard/dashboard_view.dart';
+import 'package:pongs/app/widgets/flushbar_widget/flushbar_sucess_widget.dart';
 import 'package:uuid/uuid.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -233,7 +234,7 @@ class AddNewGameCubit extends Cubit<AddNewGameState> {
     }
   }
 
-  Future<void> sendGame() async {
+  Future<void> sendGame(BuildContext context) async {
     addListOfHowToPlay();
     addListOfMaterials();
 
@@ -274,10 +275,19 @@ class AddNewGameCubit extends Cubit<AddNewGameState> {
     );
 
     if (sendGameuser && sendGameAll) {
-      NavigatorCustomService.pushAndRemoveUntil(
-          pageName: const DashboardView());
+      FlushbarSuccessWidget(
+        context: context,
+        title: 'Cadastro completo',
+        message: 'Novo jogo cadastrado com sucesso',
+        duration: Duration(seconds: 3)
+      );
 
-      clearFields();
+      Future.delayed(Duration(seconds: 4), () {
+        NavigatorCustomService.pushAndRemoveUntil(
+            pageName: const DashboardView());
+
+        clearFields();
+      });
     }
   }
 

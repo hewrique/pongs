@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pongs/app/cubits/login_cubit/login_cubit.dart';
 import 'package:pongs/app/cubits/login_cubit/login_state.dart';
 import 'package:pongs/app/services/navigator_service/navigator_custom_service.dart';
@@ -96,10 +97,9 @@ class _LoginViewState extends State<LoginView> {
                                   onTap: () => NavigatorCustomService.push(
                                     pageName: const RecoveryCodeView(),
                                   ),
-                                  child: const Text(
+                                  child: Text(
                                     "Esqueceu sua senha?",
-                                    style: TextStyle(
-                                        fontFamily: "Poppins",
+                                    style: GoogleFonts.getFont("Poppins",
                                         fontWeight: FontWeight.w600,
                                         color: Colors.black,
                                         fontSize: 11,
@@ -121,21 +121,20 @@ class _LoginViewState extends State<LoginView> {
                               onTap: () => NavigatorCustomService.push(
                                 pageName: const CreateAccountView(),
                               ),
-                              child: const Text.rich(
+                              child: Text.rich(
                                 TextSpan(
                                   children: [
                                     TextSpan(
                                       text: "Não tem conta? ",
-                                      style: TextStyle(
-                                          fontFamily: "Poppins",
+                                      style: GoogleFonts.getFont("Poppins",
                                           color: Colors.black,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600),
                                     ),
                                     TextSpan(
                                       text: "Crie sua conta",
-                                      style: TextStyle(
-                                        fontFamily: "Poppins",
+                                      style: GoogleFonts.getFont(
+                                        "Poppins",
                                         color: Colors.black,
                                         fontSize: 14,
                                         fontWeight: FontWeight.w600,

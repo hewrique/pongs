@@ -1042,7 +1042,7 @@ class _AddNewGameViewState extends State<AddNewGameView> {
                                           buttonName: 'Publicar',
                                           customFontSize: 16,
                                           onPressed: () {
-                                            _cubit.sendGame();
+                                            _cubit.sendGame(context);
                                             // _cubit.clearFields();
                                           },
                                         ),

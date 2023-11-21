@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 import 'package:pongs/app/icons/icons_pongs.dart';
 import 'package:pongs/app/utils/popup/popup_utils.dart';
 import 'package:pongs/app/widgets/filter/filter.dart';
 
 class SafeAreaCustomWidget extends StatelessWidget {
-  const SafeAreaCustomWidget({super.key});
+  final VoidCallback onTap;
+  const SafeAreaCustomWidget({
+    Key? key,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,19 +34,22 @@ class SafeAreaCustomWidget extends StatelessWidget {
                 color: Color(0xFF611313),
               ),
             ),
-            const Text(
+            Text(
               'Pongs!',
-              style: TextStyle(
-                fontFamily: "Lobster",
+              style: GoogleFonts.getFont(
+                "Lobster",
                 fontWeight: FontWeight.w400,
                 fontSize: 36,
                 color: Color(0xFF611313),
               ),
             ),
-            const Icon(
-              IconsPongs.dice_multiple,
-              size: 35,
-              color: Color(0xFF611313),
+            InkWell(
+              onTap: onTap,
+              child: const Icon(
+                IconsPongs.dice_multiple,
+                size: 35,
+                color: Color(0xFF611313),
+              ),
             )
           ],
         ),

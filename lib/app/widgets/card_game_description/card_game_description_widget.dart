@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pongs/app/icons/icons_pongs.dart';
 
 class CardGameDescriptionWidget extends StatelessWidget {
@@ -33,11 +34,12 @@ class CardGameDescriptionWidget extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20.0),
           child: Text(
             gameTitle,
-            style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-                color: Color(0xFF161616),
-                fontFamily: 'Poppins'),
+            style: GoogleFonts.getFont(
+              'Poppins',
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+              color: Color(0xFF161616),
+            ),
           ),
         ),
         const SizedBox(height: 28),
@@ -50,11 +52,11 @@ class CardGameDescriptionWidget extends StatelessWidget {
             ),
             const SizedBox(width: 20),
             Text(
-             ' $amountOfPeople pessoas por rodada',
-              style: const TextStyle(
+              ' $amountOfPeople pessoas por rodada',
+              style: GoogleFonts.getFont(
+                'Poppins',
                 color: Color(0xFF611313),
                 fontSize: 12,
-                fontFamily: 'Poppins',
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -70,11 +72,11 @@ class CardGameDescriptionWidget extends StatelessWidget {
             ),
             const SizedBox(width: 15),
             Text(
-              '$timePerRound minutos a ${timePerRound+1} minutos',
-              style: const TextStyle(
+              '$timePerRound minutos a ${timePerRound + 1} minutos',
+              style: GoogleFonts.getFont(
+                'Poppins',
                 color: Color(0xFF611313),
                 fontSize: 12,
-                fontFamily: 'Poppins',
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -92,10 +94,10 @@ class CardGameDescriptionWidget extends StatelessWidget {
             Expanded(
               child: Text(
                 materials.toString().replaceAll(RegExp(r'[\[\]]'), ""),
-                style: const TextStyle(
+                style: GoogleFonts.getFont(
+                  'Poppins',
                   color: Color(0xFF611313),
                   fontSize: 12,
-                  fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -107,11 +109,11 @@ class CardGameDescriptionWidget extends StatelessWidget {
           thickness: 2.5,
           color: Color(0xFF611313),
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: 16),
         Text(
           description,
-          style: const TextStyle(
-              fontSize: 12, fontFamily: 'Poppins', fontWeight: FontWeight.w600),
+          style: GoogleFonts.getFont('Poppins',
+              fontSize: 12, fontWeight: FontWeight.w600),
         ),
         const SizedBox(height: 16),
       ],

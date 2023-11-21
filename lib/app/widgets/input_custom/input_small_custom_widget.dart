@@ -78,8 +78,8 @@ class InputSmallCustomWidget extends StatelessWidget {
                   LengthLimitingTextInputFormatter(2),
                   FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                 ],
-                style: const TextStyle(
-                  fontFamily: "Poppins",
+                style: GoogleFonts.getFont(
+                  "Poppins",
                   color: Color(0xFF611313),
                 ),
                 decoration: const InputDecoration(border: InputBorder.none),

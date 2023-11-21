@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SearchInputWidget extends StatelessWidget {
   const SearchInputWidget({super.key});
@@ -22,8 +23,7 @@ class SearchInputWidget extends StatelessWidget {
               child: TextFormField(
                 autofocus: true,
                 maxLines: 1,
-                style: const TextStyle(
-                    fontFamily: "Poppins", color: Color(0xFF611313)),
+                style: GoogleFonts.getFont( "Poppins", color: Color(0xFF611313)),
                 decoration: const InputDecoration(
                     border: InputBorder.none,
                     prefixIcon: Icon(Icons.search),

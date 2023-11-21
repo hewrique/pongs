@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pongs/app/controllers/create_account_controller/create_account_controller.dart';
 import 'package:pongs/app/cubits/create_account_cubit/create_account_cubit.dart';
 import 'package:pongs/app/cubits/create_account_cubit/create_account_state.dart';
@@ -56,7 +57,6 @@ class _CreateAccountViewState extends State<CreateAccountView> {
         return BlocListener<CreateAccountCubit, CreateAccountState>(
           bloc: _cubit,
           listener: (context, state) {
-
             if (state is CreateAccountError) {
               FlushbarErroWidget(
                 context: context,
@@ -152,13 +152,13 @@ class _CreateAccountViewState extends State<CreateAccountView> {
                             pageName: const LoginView(),
                           );
                         },
-                        child: const Text.rich(
+                        child: Text.rich(
                           TextSpan(
                             children: [
                               TextSpan(
                                 text: "Já tem conta? ",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
+                                style: GoogleFonts.getFont(
+                                  "Poppins",
                                   color: Colors.black,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w600,
@@ -166,8 +166,8 @@ class _CreateAccountViewState extends State<CreateAccountView> {
                               ),
                               TextSpan(
                                 text: "Faça Login",
-                                style: TextStyle(
-                                  fontFamily: "Poppins",
+                                style: GoogleFonts.getFont(
+                                  "Poppins",
                                   color: Colors.black,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w600,

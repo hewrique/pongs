@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardGameRulesWidget extends StatelessWidget {
   final List<String> howToPlay;
@@ -12,12 +13,12 @@ class CardGameRulesWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'Como jogar?',
-          style: TextStyle(
+          style: GoogleFonts.getFont(
+            'Poppins',
             color: Color(0xFF161616),
             fontSize: 12,
-            fontFamily: 'Poppins',
             fontWeight: FontWeight.w800,
           ),
         ),
@@ -34,18 +35,18 @@ class CardGameRulesWidget extends StatelessWidget {
                 children: [
                   Text(
                     '${index + 1}. ',
-                    style: const TextStyle(
+                    style: GoogleFonts.getFont(
+                      'Poppins',
                       fontSize: 12,
-                      fontFamily: 'Poppins',
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                   Expanded(
                     child: Text(
                       howToPlay[index],
-                      style: const TextStyle(
+                      style: GoogleFonts.getFont(
+                        'Poppins',
                         fontSize: 12,
-                        fontFamily: 'Poppins',
                         fontWeight: FontWeight.w600,
                       ),
                     ),
